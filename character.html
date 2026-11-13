@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Forever Armory character</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Barlow:wght@400;700&display=swap">
+<style>
+  :root {
+    --anvil: #0D1013;
+    --plate: #161B20;
+    --seam: #2C353E;
+    --text: #E4E8EB;
+    --muted: #8C97A1;
+    --verdigris: #5FCDB4;
+    --verdigris-ink: #072920;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--anvil); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--anvil);
+    color: var(--text);
+    font: 400 17px/24px Barlow, system-ui, sans-serif;
+  }
+  header {
+    padding: 20px;
+    border-bottom: 1px solid var(--seam);
+    font: 800 22px/24px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
+  h1 {
+    margin: 0 0 12px;
+    font: 800 34px/34px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+  p { margin: 0 0 24px; color: var(--muted); }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    background: var(--verdigris);
+    color: var(--verdigris-ink);
+    font: 700 18px/24px Barlow, system-ui, sans-serif;
+    text-decoration: none;
+  }
+  .button.secondary {
+    background: var(--plate);
+    border: 1px solid var(--seam);
+    color: var(--text);
+  }
+  [hidden] { display: none; }
+  footer {
+    padding: 20px;
+    border-top: 1px solid var(--seam);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<header>Forever Armory</header>
+<main>
+  <h1 id="title">A WoW Forever character</h1>
+  <p id="lede">Open it in Forever Armory to see the gear, stats and talents.</p>
+  <a class="button" id="open" href="#" hidden>Open in Armory</a>
+  <a class="button secondary" id="get" href="#" hidden>Get Armory</a>
+</main>
+<footer>Forever Armory is unofficial and not endorsed by Blizzard Entertainment.</footer>
+<script>
+// Shared by the app as character.html?r=<region>&c=<slug> (plan 003 M2-4).
+// No automatic redirect: Safari shows an "invalid address" alert when the
+// app isn't installed, so opening the app is always a tap (Reroll TC-10).
+(function () {
+  // Empty until the App Store listing exists (plan 003 S):
+  // https://apps.apple.com/app/id<id>?pt=<token>&ct=card_character
+  var APP_STORE_URL = '';
+
+  var q = new URLSearchParams(location.search);
+  var r = q.get('r') || '';
+  var c = q.get('c') || '';
+  var parts = c.split('-');
+  var valid = (r === 'us' || r === 'eu') && !/[\s\/]/.test(c) &&
+    parts.length === 2 && parts[0] !== '' && parts[1] !== '';
+
+  var get = document.getElementById('get');
+  if (APP_STORE_URL) {
+    get.href = APP_STORE_URL;
+    get.hidden = false;
+  }
+
+  if (!valid) {
+    document.getElementById('title').textContent = 'Character not found';
+    document.getElementById('lede').textContent = "This link doesn't name a character.";
+    return;
+  }
+  var name = parts.map(function (p) {
+    return p.charAt(0).toLocaleUpperCase('en-US') + p.slice(1);
+  }).join(' ');
+  document.title = name + ' on Forever Armory';
+  document.getElementById('title').textContent = name;
+  var open = document.getElementById('open');
+  open.href = 'armory://character/' + r + '/' + encodeURIComponent(c);
+  open.hidden = false;
+})();
+</script>
+</body>
+</html>
