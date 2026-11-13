@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Forever Armory support</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Barlow:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --anvil: #0D1013;
+    --plate: #161B20;
+    --seam: #2C353E;
+    --text: #E4E8EB;
+    --muted: #8C97A1;
+    --verdigris: #5FCDB4;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--anvil); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--anvil);
+    color: var(--text);
+    font: 400 17px/26px Barlow, system-ui, sans-serif;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left));
+    border-bottom: 1px solid var(--seam);
+  }
+  header .mark {
+    font: 800 22px/24px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+  }
+  header nav a { font-size: 15px; font-weight: 600; }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px max(20px, env(safe-area-inset-right)) 48px max(20px, env(safe-area-inset-left));
+  }
+  h1 {
+    margin: 0 0 8px;
+    font: 800 40px/40px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin: 36px 0 10px;
+    font: 800 24px/26px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  p, li { color: var(--muted); }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--text); font-weight: 600; }
+  .meta { font-size: 15px; }
+  a { color: var(--verdigris); }
+  code {
+    font: 15px/1 ui-monospace, Menlo, monospace;
+    color: var(--text);
+    background: var(--plate);
+    border: 1px solid var(--seam);
+    border-radius: 6px;
+    padding: 1px 5px;
+  }
+  .email { color: var(--text); font-weight: 600; user-select: all; }
+  footer {
+    padding: 20px;
+    border-top: 1px solid var(--seam);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="mark" href="support.html">Forever Armory</a>
+  <nav><a href="privacy.html">Privacy policy</a></nav>
+</header>
+<main>
+  <h1>Support</h1>
+  <p>Forever Armory looks up World of Warcraft: Forever characters on your iPhone: their gear, stats, talents, skills and reputation. Questions or bug reports? Email <span class="email">arnautresserras@gmail.com</span>. Replies usually come within a few days.</p>
+
+  <h2>Is this an official Blizzard app?</h2>
+  <p>No. Forever Armory is an unofficial fan app, made by a fan. It is not affiliated with, endorsed or sponsored by Blizzard Entertainment.</p>
+
+  <h2>My character isn't found</h2>
+  <ul>
+    <li>Check the spelling of both the first name and the surname.</li>
+    <li>Try the other region. The app covers the US and EU regions, and the same name can exist in both.</li>
+    <li>New characters appear in Blizzard's armory only after they reach level 10 and log out.</li>
+  </ul>
+
+  <h2>The portrait isn't there yet</h2>
+  <p>Blizzard draws a character's portrait some hours after it logs out. Until then the app shows a silhouette. Gear and the other tabs work as normal.</p>
+
+  <h2>The gear or talents are out of date</h2>
+  <p>Blizzard updates a character after it logs out, and the app keeps each answer for about an hour. Log out in game, wait a little, then look the character up again.</p>
+
+  <h2>What does "Open in Reroll calculator" do?</h2>
+  <p>It opens the character's talents in Reroll Forever, a free companion app for planning talents. If Reroll isn't installed, it opens the same build on Reroll's website.</p>
+
+  <h2>Does the app need an account or internet?</h2>
+  <p>No account. Looking up a character needs an internet connection. Pins and recent searches stay on your phone; see the <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>Credit</h2>
+  <p>Character data, renders and item icons © Blizzard Entertainment, from Blizzard's World of Warcraft API. World of Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc.</p>
+</main>
+<footer>Forever Armory is unofficial and not endorsed by Blizzard Entertainment.</footer>
+</body>
+</html>

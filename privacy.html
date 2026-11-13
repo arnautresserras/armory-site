@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Forever Armory privacy policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Barlow:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --anvil: #0D1013;
+    --plate: #161B20;
+    --seam: #2C353E;
+    --text: #E4E8EB;
+    --muted: #8C97A1;
+    --verdigris: #5FCDB4;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--anvil); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--anvil);
+    color: var(--text);
+    font: 400 17px/26px Barlow, system-ui, sans-serif;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left));
+    border-bottom: 1px solid var(--seam);
+  }
+  header .mark {
+    font: 800 22px/24px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+  }
+  header nav a { font-size: 15px; font-weight: 600; }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px max(20px, env(safe-area-inset-right)) 48px max(20px, env(safe-area-inset-left));
+  }
+  h1 {
+    margin: 0 0 8px;
+    font: 800 40px/40px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin: 36px 0 10px;
+    font: 800 24px/26px 'Big Shoulders Display', system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  p, li { color: var(--muted); }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--text); font-weight: 600; }
+  .meta { font-size: 15px; }
+  a { color: var(--verdigris); }
+  code {
+    font: 15px/1 ui-monospace, Menlo, monospace;
+    color: var(--text);
+    background: var(--plate);
+    border: 1px solid var(--seam);
+    border-radius: 6px;
+    padding: 1px 5px;
+  }
+  .email { color: var(--text); font-weight: 600; user-select: all; }
+  footer {
+    padding: 20px;
+    border-top: 1px solid var(--seam);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="mark" href="support.html">Forever Armory</a>
+  <nav><a href="support.html">Support</a></nav>
+</header>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="meta">Last updated 13 November 2026</p>
+
+  <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, and only anonymous usage events.</p>
+
+  <h2>What the app does not collect</h2>
+  <ul>
+    <li>No account, name, email address or phone number.</li>
+    <li>No Blizzard or Battle.net login. The app never asks for your Blizzard password.</li>
+    <li>No location, contacts, photos or other content from your device.</li>
+    <li>No advertising identifier. The app does not track you across other companies' apps or websites.</li>
+  </ul>
+
+  <h2>Character lookups</h2>
+  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The server does not log the names you look up and keeps no record of who searched. Answers are cached by Cloudflare for about an hour, so a second lookup is faster. Cloudflare handles each request, including your IP address, under its own privacy policy.</p>
+  <p>The character data shown is about game characters, from Blizzard's public API. It is not data about you.</p>
+
+  <h2>On this phone only</h2>
+  <p>Your pinned characters and recent searches stay on your device and are never sent anywhere.</p>
+
+  <h2>Anonymous usage events</h2>
+  <p>To see which features people use, the app sends anonymous usage events to PostHog, an analytics service, using its servers in the European Union. No event ever contains a character's name, surname or id. The events are:</p>
+  <ul>
+    <li><code>character_searched</code>: the region searched, and whether a character was found.</li>
+    <li><code>character_viewed</code>: the region and class of the character, and whether you opened it from a search, a pin or a shared link.</li>
+    <li><code>character_pinned</code>: the region and class of the character you pinned.</li>
+    <li><code>talents_exported</code>: the class whose talents you opened in Reroll.</li>
+    <li><code>card_shared</code>: that you shared a character card, and the character's class.</li>
+  </ul>
+  <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
+
+  <h2>Photos</h2>
+  <p>If you choose Save Image from the share sheet, iOS asks for permission to add the card to your Photos library. The app can only add images. It cannot see or read your photos.</p>
+
+  <h2>Blizzard data</h2>
+  <p>Character data, renders and item icons come from Blizzard's World of Warcraft API and are © Blizzard Entertainment. They are provided "as is", without warranty of any kind, and may be out of date or incomplete. Blizzard's own handling of player data is described in the <a href="https://www.blizzard.com/en-us/legal/a4380ee5-5c8d-4e3b-83b7-ea26d01a9918/blizzard-entertainment-online-privacy-policy">Blizzard Entertainment Online Privacy Policy</a>.</p>
+
+  <h2>Sharing and selling</h2>
+  <p>Usage events are not sold, and are not shared with anyone for advertising. They are used only to understand and improve the app.</p>
+
+  <h2>Retention</h2>
+  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Cached character answers expire after about an hour.</p>
+
+  <h2>Your choices</h2>
+  <p>You can stop all collection by deleting the app. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events are anonymous, it helps to include roughly when you used the app.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children and collects no personal data from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version is posted on this page with a new date.</p>
+</main>
+<footer>Forever Armory is unofficial and not endorsed by Blizzard Entertainment.</footer>
+</body>
+</html>
