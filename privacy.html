@@ -104,7 +104,7 @@
   </ul>
 
   <h2>Character lookups</h2>
-  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The server does not log the names you look up and keeps no record of who searched. Answers are cached by Cloudflare for about an hour, so a second lookup is faster. Cloudflare handles each request, including your IP address, under its own privacy policy.</p>
+  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The app's own code never writes the names you look up to its logs, and the server keeps no account or history of who searched. Cloudflare keeps short-lived request logs for a few days, which include the address requested (and so the character's name) and your IP address, under its own privacy policy. Answers are cached by Cloudflare for about an hour, so a second lookup is faster.</p>
   <p>The character data shown is about game characters, from Blizzard's public API. It is not data about you.</p>
 
   <h2>On this phone only</h2>
@@ -142,6 +142,6 @@
   <h2>Changes</h2>
   <p>If this policy changes, the new version is posted on this page with a new date.</p>
 </main>
-<footer>Forever Armory is unofficial and not endorsed by Blizzard Entertainment.</footer>
+<footer>Forever Armory is unofficial and not endorsed by Blizzard Entertainment. · <a href="support.html">Support</a></footer>
 </body>
 </html>
