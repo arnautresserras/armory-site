@@ -91,9 +91,9 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 13 November 2026</p>
+  <p class="meta">Last updated 14 November 2026</p>
 
-  <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, and only anonymous usage events.</p>
+  <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, and optional tips paid through Apple.</p>
 
   <h2>What the app does not collect</h2>
   <ul>
@@ -119,8 +119,25 @@
     <li><code>talents_exported</code>: the class whose talents you opened in Reroll.</li>
     <li><code>card_shared</code>: that you shared a character card, and the character's class.</li>
   </ul>
+  <p>From version 1.1, the app also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
   <p>PostHog also estimates a rough location, the country and city, from the IP address each event arrives from. It is used only to count where the app is used, is not linked to you and is never used to track you.</p>
+
+  <h2>Diagnostics</h2>
+  <p>When something goes wrong, the app and its server send a report to Sentry, an error-monitoring service run by Functional Software, Inc. Reports cover crashes, errors and warning-level log lines, such as a lookup that failed. The server may send them from the date of this policy; the app sends them from version 1.1.</p>
+  <p>A report holds what is needed to find the fault: the error and where in the code it happened, the app and iOS version, the device model, and the last few steps the app took before it. Reports from the app also carry a random identifier that Sentry's library creates on the phone, so that repeated crashes on one phone can be told apart; like the analytics identifier, it is not linked to your identity. Before a report is sent, the character name in any lookup address it holds is replaced by a placeholder, and the app's code never writes a name into a report. Reports are not linked to you: Sentry is set not to keep your IP address or any location worked out from it, and reports contain no account, no name of yours and no character name.</p>
+  <p>Report data (crash reports, error reports and logs) is stored in Sentry's European Union region. Sentry's own data about the developer's Sentry account and its usage may be stored in the United States. Reports are used only to find and fix problems in the app.</p>
+
+  <h2 id="tips">Tips</h2>
+  <p>From version 1.1, you can leave an optional tip to support the app. Tips are in-app purchases, processed entirely by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. The app and its developer never receive your name, Apple ID or payment details. A tip unlocks nothing: every feature stays free either way.</p>
+  <p>The app keeps a record on this phone of whether you have tipped and when it last mentioned tips, so the short tip line shown after you share a card appears at most once every 30 days, and never after a tip. That record never leaves the phone. The app also sends these anonymous usage events, which hold only where in the app the tips were offered and, once you pick one, the tip size (small, medium or large):</p>
+  <ul>
+    <li><code>tip_jar_viewed</code>: that the tip options were shown.</li>
+    <li><code>tip_started</code>: that a tip was chosen.</li>
+    <li><code>tip_purchased</code>: that a tip went through.</li>
+    <li><code>tip_failed</code>: that a tip was cancelled or did not go through.</li>
+  </ul>
+  <p>For a refund, contact Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 
   <h2>Photos</h2>
   <p>If you choose Save Image from the share sheet, iOS asks for permission to add the card to your Photos library. The app can only add images. It cannot see or read your photos.</p>
@@ -129,13 +146,13 @@
   <p>Character data, renders and item icons come from Blizzard's World of Warcraft API and are © Blizzard Entertainment. They are provided "as is", without warranty of any kind, and may be out of date or incomplete. Blizzard's own handling of player data is described in the <a href="https://www.blizzard.com/en-us/legal/a4380ee5-5c8d-4e3b-83b7-ea26d01a9918/blizzard-entertainment-online-privacy-policy">Blizzard Entertainment Online Privacy Policy</a>.</p>
 
   <h2>Sharing and selling</h2>
-  <p>Usage events are not sold, and are not shared with anyone for advertising. They are used only to understand and improve the app.</p>
+  <p>Usage events and diagnostic reports are not sold, and are not shared with anyone for advertising. They are used only to understand, fix and improve the app.</p>
 
   <h2>Retention</h2>
-  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Cached character answers expire after about an hour.</p>
+  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour.</p>
 
   <h2>Your choices</h2>
-  <p>You can stop all collection by deleting the app. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events are anonymous, it helps to include roughly when you used the app.</p>
+  <p>You can stop all collection by deleting the app. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app.</p>
 
   <h2>Children</h2>
   <p>The app is not directed at children and collects no personal data from anyone.</p>
