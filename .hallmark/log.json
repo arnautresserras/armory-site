@@ -1,0 +1,29 @@
+[
+ {
+  "shape": "Workbench",
+  "theme": "brand",
+  "axes": "dark/display-condensed/chromatic-teal",
+  "hero": "Stage",
+  "nav": "slab",
+  "footer": "mast",
+  "imagery": "screenshots 5 (App Store captures, cropped)",
+  "photos": [],
+  "entry": "none",
+  "fingerprint": "workbench-stage-slab-mast-pinned-rows-band",
+  "sections": [
+   "hero",
+   "pinned",
+   "rows",
+   "band",
+   "footer"
+  ],
+  "signature": "the gear screen, slots in item-quality borders round the portrait",
+  "waived": [
+   "79",
+   "44c"
+  ],
+  "prompt": "landing page for the Forever Armory app site",
+  "date": "2026-11-14",
+  "mode": "build"
+ }
+]
