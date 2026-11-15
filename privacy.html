@@ -91,7 +91,7 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 14 November 2026</p>
+  <p class="meta">Last updated 15 November 2026</p>
 
   <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, and optional tips paid through Apple.</p>
 
@@ -108,7 +108,12 @@
   <p>The character data shown is about game characters, from Blizzard's public API. It is not data about you.</p>
 
   <h2>On this phone only</h2>
-  <p>Your pinned characters and recent searches stay on your device and are never sent anywhere.</p>
+  <p>Your list of pinned characters and your recent searches are kept on your device; the app's server never stores them.</p>
+  <p>From version 1.1, the app keeps a progress history for each pinned character on this phone: its level, item level, equipped items and, at level 60, its key stats, talent specialisation and profession skills, at most one entry a day. To keep it current, the app looks up each pinned character again through the app's server, at most once a day when you open the app, as described under Character lookups. The history is deleted when you unpin the character, or as soon as Blizzard no longer finds the character. It is never sent to the app's server or anyone else.</p>
+  <p>Gear plans (the item you choose for each slot of a pinned character) also stay on this phone, and are deleted with the history when you unpin the character or Blizzard no longer finds it.</p>
+
+  <h2>Item list</h2>
+  <p>From version 1.1, the gear planner uses a list of the game's equippable items, which the app downloads from the app's server and keeps on this phone, checking for a new one at most every 30 days. The server builds that list once a month from Blizzard's World of Warcraft API and keeps only the current copy. It holds item data only, nothing about you or any character, and downloading it sends nothing but the region.</p>
 
   <h2>Anonymous usage events</h2>
   <p>To see which features people use, the app sends anonymous usage events to PostHog, an analytics service, using its servers in the European Union. No event ever contains a character's name, surname or id. The events are:</p>
@@ -118,8 +123,16 @@
     <li><code>character_pinned</code>: the region and class of the character you pinned.</li>
     <li><code>talents_exported</code>: the class whose talents you opened in Reroll.</li>
     <li><code>card_shared</code>: that you shared a character card, and the character's class.</li>
+    <li><code>gear_search_opened</code>: that you opened a stat's "Find gear" link, which stat, and the character's class.</li>
   </ul>
-  <p>From version 1.1, the app also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
+  <p>From version 1.1, the app also sends these events, none with an item's name or id:</p>
+  <ul>
+    <li><code>progress_viewed</code>: that you opened a pinned character's progress, and the character's class.</li>
+    <li><code>planner_opened</code>: that you opened a character's gear plan, and the character's class.</li>
+    <li><code>upgrade_target_set</code>: that you chose a target item, which equipment slot (such as head), and the character's class.</li>
+    <li><code>upgrade_finder_used</code>: that you ranked upgrades by a stat, which stat (such as hit), and the character's class.</li>
+  </ul>
+  <p>It also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
   <p>PostHog also estimates a rough location, the country and city, from the IP address each event arrives from. It is used only to count where the app is used, is not linked to you and is never used to track you.</p>
 
@@ -149,10 +162,10 @@
   <p>Usage events and diagnostic reports are not sold, and are not shared with anyone for advertising. They are used only to understand, fix and improve the app.</p>
 
   <h2>Retention</h2>
-  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour.</p>
+  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour. Progress history and gear plans stay on your phone until you unpin the character, Blizzard no longer finds it, or you delete the app. The server's item list is replaced every month.</p>
 
   <h2>Your choices</h2>
-  <p>You can stop all collection by deleting the app. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app.</p>
+  <p>You can stop all collection by deleting the app, which also removes its progress history and gear plans. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app.</p>
 
   <h2>Children</h2>
   <p>The app is not directed at children and collects no personal data from anyone.</p>
