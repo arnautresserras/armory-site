@@ -1,6 +1,6 @@
 /* Hallmark · shape: Workbench · genre: modern-minimal · theme: brand (Forever Armory app, docs/design.md) · draw: c38209 · job: try · copy: from the App Store listing
  * paper: oklch(17.1% 0.008 248) · accent: oklch(77.7% 0.108 176) · display: Big Shoulders Display · body: Barlow · hero: Stage (swapped from Corridor) · nav: slab · footer: mast · signature: the gear screen, slots in item-quality borders round the portrait
- * axes: dark/display-condensed/chromatic-teal · posture: Restrained · contrast: pass · fold: pass · imagery: screenshots 5 (App Store captures, cropped to the screen) · v2.0.0 */
+ * axes: dark/display-condensed/chromatic-teal · posture: Restrained · contrast: pass · fold: pass · imagery: screenshots 8 (1.1 App Store captures, cropped to the screen) · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E4 S5 R5 V4 · weakest: P, the page only argues "the character screen, on your phone"; kept it plain because that is the whole product */
 /* Hallmark · waive 79 · the gear screen beside the text runs to y 876 of 900 · the measure reads the text column only; the hero's screen capture fills the fold */
 /* Hallmark · waive 44c · hero section is 900px tall and the gear screen ends at y 876 · the check stops at the text column, the next section starts at the fold */
@@ -45,7 +45,7 @@ h3 { font-weight: 600; font-family: var(--font-body); }
 .hero-copy .btn { margin-top: var(--space-md); }
 .screen { margin: 0; border-radius: var(--radius-card); outline: 1px solid var(--color-rule); outline-offset: -1px; }
 .screen > img { outline: 1px solid var(--color-rule); outline-offset: -1px; border-radius: var(--radius-card); }
-.hero .screen { height: min(740px, calc(100svh - 150px)); max-width: 100%; aspect-ratio: 720 / 1261; }
+.hero .screen { height: min(740px, calc(100svh - 150px)); max-width: 100%; aspect-ratio: 720 / 1183; }
 
 /* Tour: Pinned */
 .tour { padding-block: var(--section-gap) var(--section-gap-s); }
@@ -58,21 +58,29 @@ h3 { font-weight: 600; font-family: var(--font-body); }
 .panel h3 { font-size: var(--text-3xl); font-family: var(--font-display); font-weight: 800; text-transform: uppercase; line-height: 1; }
 .panel p { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.45; max-width: 40ch; }
 .panel .screen { width: min(100%, 380px); margin-top: var(--space-md); }
-.panel .screen--tooltip { aspect-ratio: 720 / 1261; }
-.panel .screen--talents { aspect-ratio: 720 / 1427; }
-.panel .screen--share { aspect-ratio: 720 / 1523; }
+.screen--tooltip { aspect-ratio: 720 / 1183; }
+.screen--talents { aspect-ratio: 720 / 1087; }
+.screen--share { aspect-ratio: 720 / 1419; }
+.screen--progress, .screen--planner { aspect-ratio: 720 / 1133; }
+.screen--finder { aspect-ratio: 720 / 1019; }
 
 @media (min-width: 60rem) {
   .tour-body { grid-column: 1 / -1; }
   .tour-body > .panels { grid-column: 2; }
   .js .tour-stage { display: block; grid-column: 1; grid-row: 1; position: sticky; top: var(--space-2xl); height: calc(100svh - 2 * var(--space-2xl)); max-height: 820px; }
   .js .tour-stage .screen { position: absolute; inset: 0; margin: auto; height: 100%; max-width: 100%; opacity: 0; transition: opacity var(--dur-long) var(--ease-out); }
-  .js .tour-stage .screen--tooltip { aspect-ratio: 720 / 1261; height: 88%; }
-  .js .tour-stage .screen--talents { aspect-ratio: 720 / 1427; }
-  .js .tour-stage .screen--share { aspect-ratio: 720 / 1523; }
+  /* Heights in proportion to each crop's aspect, so every screen shows at the same width. */
+  .js .tour-stage .screen--tooltip { height: 80%; }
+  .js .tour-stage .screen--talents { height: 74%; }
+  .js .tour-stage .screen--share { height: 96%; }
+  .js .tour-stage .screen--progress, .js .tour-stage .screen--planner { height: 77%; }
+  .js .tour-stage .screen--finder { height: 69%; }
   .js .tour-stage[data-active="tooltip"] .screen--tooltip,
   .js .tour-stage[data-active="talents"] .screen--talents,
-  .js .tour-stage[data-active="share"] .screen--share { opacity: 1; }
+  .js .tour-stage[data-active="share"] .screen--share,
+  .js .tour-stage[data-active="progress"] .screen--progress,
+  .js .tour-stage[data-active="planner"] .screen--planner,
+  .js .tour-stage[data-active="finder"] .screen--finder { opacity: 1; }
   .js .panel { min-height: 78svh; }
   .js .panel .screen { display: none; }
   .js .panels { gap: 0; }
@@ -92,7 +100,7 @@ h3 { font-weight: 600; font-family: var(--font-body); }
 /* Close: a band with the download beside the search screen */
 .close { background: var(--color-paper-2); border-block: var(--rule-hair) solid var(--color-rule); padding-block: var(--section-gap-s); }
 .close .container { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
-.close .screen { justify-self: end; width: min(100%, 420px); aspect-ratio: 720 / 1150; }
+.close .screen { justify-self: end; width: min(100%, 420px); aspect-ratio: 720 / 984; }
 .close .screen > img { object-position: 50% 0; }
 .close-copy { display: grid; gap: var(--space-lg); justify-items: start; }
 .close-copy p { color: var(--color-ink-2); font-size: var(--text-lead); max-width: 30ch; }
