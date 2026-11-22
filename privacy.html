@@ -85,7 +85,7 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 15 November 2026</p>
+  <p class="meta">Last updated 21 November 2026</p>
 
   <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, and optional tips paid through Apple.</p>
 
@@ -113,7 +113,7 @@
   <p>To see which features people use, the app sends anonymous usage events to PostHog, an analytics service, using its servers in the European Union. No event ever contains a character's name, surname or id. The events are:</p>
   <ul>
     <li><code>character_searched</code>: the region searched, and whether a character was found.</li>
-    <li><code>character_viewed</code>: the region and class of the character, and whether you opened it from a search, a pin or a shared link.</li>
+    <li><code>character_viewed</code>: the region and class of the character, and whether you opened it from a search, a pin, a shared link or a guild's member list.</li>
     <li><code>character_pinned</code>: the region and class of the character you pinned.</li>
     <li><code>talents_exported</code>: the class whose talents you opened in Reroll.</li>
     <li><code>card_shared</code>: that you shared a character card, and the character's class.</li>
@@ -124,7 +124,12 @@
     <li><code>progress_viewed</code>: that you opened a pinned character's progress, and the character's class.</li>
     <li><code>planner_opened</code>: that you opened a character's gear plan, and the character's class.</li>
     <li><code>upgrade_target_set</code>: that you chose a target item, which equipment slot (such as head), and the character's class.</li>
-    <li><code>upgrade_finder_used</code>: that you ranked upgrades by a stat, which stat (such as hit), and the character's class.</li>
+    <li><code>upgrade_finder_used</code>: that you ranked upgrades by a stat, which stat (such as hit), the character's class and, from version 1.2, how many more stats you required (a number only).</li>
+  </ul>
+  <p>From version 1.2, the app also sends these events, none with a character's or guild's name or id:</p>
+  <ul>
+    <li><code>guild_viewed</code>: that you opened a guild's member list, and its region (US or EU).</li>
+    <li><code>review_prompted</code>: that the app asked iOS to show the App Store rating prompt, and whether that followed sharing a card or choosing a target item. iOS decides whether the prompt appears; the app never learns whether you rated it or what you wrote.</li>
   </ul>
   <p>It also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
