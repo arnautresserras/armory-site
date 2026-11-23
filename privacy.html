@@ -85,7 +85,7 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 21 November 2026</p>
+  <p class="meta">Last updated 23 November 2026</p>
 
   <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, and optional tips paid through Apple.</p>
 
@@ -98,11 +98,12 @@
   </ul>
 
   <h2>Character lookups</h2>
-  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The app's own code never writes the names you look up to its logs, and the server keeps no account or history of who searched. Cloudflare keeps short-lived request logs for a few days, which include the address requested (and so the character's name) and your IP address, under its own privacy policy. Answers are cached by Cloudflare for about an hour, so a second lookup is faster.</p>
+  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The app's own code never writes the names you look up to its logs, and the server keeps no account or history of who searched. Cloudflare keeps short-lived request logs for a few days, which include the address requested (and so the character's name) and your IP address, under its own privacy policy. Answers are cached by Cloudflare for about an hour, so a second lookup is faster. From version 1.3, if there is no character with that name in the region you chose, the app looks it up in the other region too, the same way, so it can show you a match there.</p>
   <p>The character data shown is about game characters, from Blizzard's public API. It is not data about you.</p>
 
   <h2>On this phone only</h2>
   <p>Your list of pinned characters and your recent searches are kept on your device; the app's server never stores them.</p>
+  <p>From version 1.3, the app also remembers on this phone the last region you searched and whether you have searched before. Until you search, it picks the starting region from your phone's region setting (Europe or not). Neither the setting nor the remembered region is sent anywhere except as the region of a lookup or of a usage event below.</p>
   <p>From version 1.1, the app keeps a progress history for each pinned character on this phone: its level, item level, equipped items and, at level 60, its key stats, talent specialisation and profession skills, at most one entry a day. To keep it current, the app looks up each pinned character again through the app's server, at most once a day when you open the app, as described under Character lookups. The history is deleted when you unpin the character, or as soon as Blizzard no longer finds the character. It is never sent to the app's server or anyone else.</p>
   <p>Gear plans (the item you choose for each slot of a pinned character) also stay on this phone, and are deleted with the history when you unpin the character or Blizzard no longer finds it.</p>
 
@@ -130,6 +131,10 @@
   <ul>
     <li><code>guild_viewed</code>: that you opened a guild's member list, and its region (US or EU).</li>
     <li><code>review_prompted</code>: that the app asked iOS to show the App Store rating prompt, and whether that followed sharing a card or choosing a target item. iOS decides whether the prompt appears; the app never learns whether you rated it or what you wrote.</li>
+  </ul>
+  <p>From version 1.3, <code>character_searched</code> also carries, none of them the name you typed: whether it was this phone's first search; three yes-or-no notes on what was typed (whether it had accented or non-Latin letters, a space inside a name, or punctuation or digits); and, when no character was found, whether one with that name exists in the other region. The app also sends:</p>
+  <ul>
+    <li><code>search_rejected</code>: that the app didn't send a search because a name was more than one word, with no other detail.</li>
   </ul>
   <p>It also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
