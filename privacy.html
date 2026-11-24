@@ -85,9 +85,9 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 23 November 2026</p>
+  <p class="meta">Last updated 24 November 2026</p>
 
-  <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, and optional tips paid through Apple.</p>
+  <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, feedback you choose to send, and optional tips paid through Apple.</p>
 
   <h2>What the app does not collect</h2>
   <ul>
@@ -98,17 +98,19 @@
   </ul>
 
   <h2>Character lookups</h2>
-  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The app's own code never writes the names you look up to its logs, and the server keeps no account or history of who searched. Cloudflare keeps short-lived request logs for a few days, which include the address requested (and so the character's name) and your IP address, under its own privacy policy. Answers are cached by Cloudflare for about an hour, so a second lookup is faster. From version 1.3, if there is no character with that name in the region you chose, the app looks it up in the other region too, the same way, so it can show you a match there.</p>
+  <p>When you look up a character, the app sends its name, surname and region to the app's own server, which runs on Cloudflare. The server asks Blizzard's World of Warcraft API for that character and passes the answer back. The app's own code never writes the names you look up to its logs, and the server keeps no account or history of who searched. Cloudflare keeps short-lived request logs for a few days, which include the address requested (and so the character's name) and your IP address, under its own privacy policy. Answers are cached by Cloudflare for about an hour, so a second lookup is faster. Since the November 2026 update of version 1.2, if there is no character with that name in the region you chose, the app looks it up in the other region too, the same way, so it can show you a match there.</p>
   <p>The character data shown is about game characters, from Blizzard's public API. It is not data about you.</p>
 
   <h2>On this phone only</h2>
   <p>Your list of pinned characters and your recent searches are kept on your device; the app's server never stores them.</p>
-  <p>From version 1.3, the app also remembers on this phone the last region you searched and whether you have searched before. Until you search, it picks the starting region from your phone's region setting (Europe or not). Neither the setting nor the remembered region is sent anywhere except as the region of a lookup or of a usage event below.</p>
+  <p>Since the November 2026 update of version 1.2, the app also remembers on this phone the last region you searched and whether you have searched before. Until you search, it picks the starting region from your phone's region setting (Europe or not). Neither the setting nor the remembered region is sent anywhere except as the region of a lookup or of a usage event below.</p>
   <p>From version 1.1, the app keeps a progress history for each pinned character on this phone: its level, item level, equipped items and, at level 60, its key stats, talent specialisation and profession skills, at most one entry a day. To keep it current, the app looks up each pinned character again through the app's server, at most once a day when you open the app, as described under Character lookups. The history is deleted when you unpin the character, or as soon as Blizzard no longer finds the character. It is never sent to the app's server or anyone else.</p>
   <p>Gear plans (the item you choose for each slot of a pinned character) also stay on this phone, and are deleted with the history when you unpin the character or Blizzard no longer finds it.</p>
 
   <h2>Item list</h2>
-  <p>From version 1.1, the gear planner uses a list of the game's equippable items, which the app downloads from the app's server and keeps on this phone, checking for a new one at most every 30 days. The server builds that list once a month from Blizzard's World of Warcraft API and keeps only the current copy. It holds item data only, nothing about you or any character, and downloading it sends nothing but the region.</p>
+  <p>From version 1.1, the gear planner uses a list of the game's equippable items, which the app downloads from the app's server and keeps on this phone. From version 1.2.1 the app checks for a new list at most once a day (before, every 30 days). The server builds that list once a month from Blizzard's World of Warcraft API and keeps only the current copy.</p>
+  <p>Blizzard's item data leaves out many items, so from November 2026, when a character is looked up, the server also adds to the list the items that character wears and the list lacks. It keeps only each item's own details, such as its name, quality and stats, never which character wore it or who looked it up. The list is rebuilt every day, and an item added this way is dropped after at most 30 days, coming back only if a character is seen wearing it again.</p>
+  <p>The list holds item data only, nothing about you or any character, and downloading it sends nothing but the region.</p>
 
   <h2>Anonymous usage events</h2>
   <p>To see which features people use, the app sends anonymous usage events to PostHog, an analytics service, using its servers in the European Union. No event ever contains a character's name, surname or id. The events are:</p>
@@ -132,13 +134,18 @@
     <li><code>guild_viewed</code>: that you opened a guild's member list, and its region (US or EU).</li>
     <li><code>review_prompted</code>: that the app asked iOS to show the App Store rating prompt, and whether that followed sharing a card or choosing a target item. iOS decides whether the prompt appears; the app never learns whether you rated it or what you wrote.</li>
   </ul>
-  <p>From version 1.3, <code>character_searched</code> also carries, none of them the name you typed: whether it was this phone's first search; three yes-or-no notes on what was typed (whether it had accented or non-Latin letters, a space inside a name, or punctuation or digits); and, when no character was found, whether one with that name exists in the other region. The app also sends:</p>
+  <p>Since the November 2026 update of version 1.2, <code>character_searched</code> also carries, none of them the name you typed: whether it was this phone's first search; three yes-or-no notes on what was typed (whether it had accented or non-Latin letters, a space inside a name, or punctuation or digits); and, when no character was found, whether one with that name exists in the other region. The app also sends:</p>
   <ul>
     <li><code>search_rejected</code>: that the app didn't send a search because a name was more than one word, with no other detail.</li>
   </ul>
   <p>It also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
   <p>PostHog also estimates a rough location, the country and city, from the IP address each event arrives from. It is used only to count where the app is used, is not linked to you and is never used to track you.</p>
+
+  <h2 id="feedback">Feedback</h2>
+  <p>From version 1.2.1, you can send feedback from About, or from the Not found screen after a search finds no character. The form sends it to PostHog, the analytics service above, in its European Union region: the topic you pick (something's broken, an idea, or something else), the text you write, and where you opened the form (About or Not found), with the same technical details, random identifier and rough location as the usage events. Nothing else is attached: not your pinned characters, your searches or the name you searched for.</p>
+  <p>Whatever you type is kept as you wrote it, including any names. Leave out anything you would rather not share. Feedback is read only by the developer, to fix and improve the app, and is never shown to other users.</p>
+  <p>The form uses three events: <code>survey shown</code>, that the form was opened; <code>survey dismissed</code>, that it was closed without sending; and <code>survey sent</code>, which carries the feedback itself. Each also says where the form was opened.</p>
 
   <h2>Diagnostics</h2>
   <p>When something goes wrong, the app and its server send a report to Sentry, an error-monitoring service run by Functional Software, Inc. Reports cover crashes, errors and warning-level log lines, such as a lookup that failed. The server may send them from the date of this policy; the app sends them from version 1.1.</p>
@@ -163,13 +170,13 @@
   <p>Character data, renders and item icons come from Blizzard's World of Warcraft API and are © Blizzard Entertainment. They are provided "as is", without warranty of any kind, and may be out of date or incomplete. Blizzard's own handling of player data is described in the <a href="https://www.blizzard.com/en-us/legal/a4380ee5-5c8d-4e3b-83b7-ea26d01a9918/blizzard-entertainment-online-privacy-policy">Blizzard Entertainment Online Privacy Policy</a>.</p>
 
   <h2>Sharing and selling</h2>
-  <p>Usage events and diagnostic reports are not sold, and are not shared with anyone for advertising. They are used only to understand, fix and improve the app.</p>
+  <p>Usage events, feedback and diagnostic reports are not sold, and are not shared with anyone for advertising. They are used only to understand, fix and improve the app.</p>
 
   <h2>Retention</h2>
-  <p>Usage events are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour. Progress history and gear plans stay on your phone until you unpin the character, Blizzard no longer finds it, or you delete the app. The server's item list is replaced every month.</p>
+  <p>Usage events and feedback are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour. Progress history and gear plans stay on your phone until you unpin the character, Blizzard no longer finds it, or you delete the app. The server's item list is rebuilt every day; items added from characters' gear are dropped after at most 30 days.</p>
 
   <h2>Your choices</h2>
-  <p>You can stop all collection by deleting the app, which also removes its progress history and gear plans. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app.</p>
+  <p>You can stop all collection by deleting the app, which also removes its progress history and gear plans. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app, and for feedback, roughly what you wrote.</p>
 
   <h2>Children</h2>
   <p>The app is not directed at children and collects no personal data from anyone.</p>
