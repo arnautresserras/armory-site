@@ -85,7 +85,7 @@
 </header>
 <main>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 24 November 2026</p>
+  <p class="meta">Last updated 27 November 2026</p>
 
   <p>Forever Armory is a free iPhone app made by an individual developer, Arnau Tresserras. It is an unofficial fan app, not made, endorsed or supported by Blizzard Entertainment. This policy explains what the app collects and why. In short: no account, no personal data, only anonymous usage events and error reports, feedback you choose to send, and optional tips paid through Apple.</p>
 
@@ -105,7 +105,8 @@
   <p>Your list of pinned characters and your recent searches are kept on your device; the app's server never stores them.</p>
   <p>Since the November 2026 update of version 1.2, the app also remembers on this phone the last region you searched and whether you have searched before. Until you search, it picks the starting region from your phone's region setting (Europe or not). Neither the setting nor the remembered region is sent anywhere except as the region of a lookup or of a usage event below.</p>
   <p>From version 1.1, the app keeps a progress history for each pinned character on this phone: its level, item level, equipped items and, at level 60, its key stats, talent specialisation and profession skills, at most one entry a day. To keep it current, the app looks up each pinned character again through the app's server, at most once a day when you open the app, as described under Character lookups. The history is deleted when you unpin the character, or as soon as Blizzard no longer finds the character. It is never sent to the app's server or anyone else.</p>
-  <p>Gear plans (the item you choose for each slot of a pinned character) also stay on this phone, and are deleted with the history when you unpin the character or Blizzard no longer finds it.</p>
+  <p>From version 1.3, the history also keeps the character's game statistics from Blizzard's API, such as creatures killed, deaths, quests completed, dungeons entered and flight paths taken, which the app turns into a monthly recap of the character. To read them, the daily lookup also asks the app's server for the character's statistics and achievements, and the app does one more lookup on the first launch on or after the 4th of each month, so each month ends on the right day. Opening a recap asks for the character's achievements again, the same way. The statistics stay on this phone with the rest of the history.</p>
+  <p>Gear plans (the item you choose for each slot of a pinned character) and, from version 1.3, talent plans also stay on this phone, and are deleted with the history when you unpin the character or Blizzard no longer finds it.</p>
 
   <h2>Item list</h2>
   <p>From version 1.1, the gear planner uses a list of the game's equippable items, which the app downloads from the app's server and keeps on this phone. From version 1.2.1 the app checks for a new list at most once a day (before, every 30 days). The server builds that list once a month from Blizzard's World of Warcraft API and keeps only the current copy.</p>
@@ -118,8 +119,8 @@
     <li><code>character_searched</code>: the region searched, and whether a character was found.</li>
     <li><code>character_viewed</code>: the region and class of the character, and whether you opened it from a search, a pin, a shared link or a guild's member list.</li>
     <li><code>character_pinned</code>: the region and class of the character you pinned.</li>
-    <li><code>talents_exported</code>: the class whose talents you opened in Reroll.</li>
-    <li><code>card_shared</code>: that you shared a character card, and the character's class.</li>
+    <li><code>talents_exported</code>: the class whose talents you opened in Reroll (not sent from version 1.3).</li>
+    <li><code>card_shared</code>: that you shared a character card or, from version 1.3, a monthly recap card, which of the two, and the character's class.</li>
     <li><code>gear_search_opened</code>: that you opened a stat's "Find gear" link, which stat, and the character's class.</li>
   </ul>
   <p>From version 1.1, the app also sends these events, none with an item's name or id:</p>
@@ -137,6 +138,14 @@
   <p>Since the November 2026 update of version 1.2, <code>character_searched</code> also carries, none of them the name you typed: whether it was this phone's first search; three yes-or-no notes on what was typed (whether it had accented or non-Latin letters, a space inside a name, or punctuation or digits); and, when no character was found, whether one with that name exists in the other region. The app also sends:</p>
   <ul>
     <li><code>search_rejected</code>: that the app didn't send a search because a name was more than one word, with no other detail.</li>
+  </ul>
+  <p>From version 1.3, the app also sends these events, none with a character's name or id:</p>
+  <ul>
+    <li><code>talents_opened</code>: that you opened a talent tree, the character's class, and whether from the character's page or the planner.</li>
+    <li><code>talent_build_saved</code>: that you saved a talent plan, the character's class, and the talents chosen, as a short code.</li>
+    <li><code>talents_reset</code>: that you cleared a talent plan, and the character's class.</li>
+    <li><code>recap_opened</code>: that you opened a monthly recap, the character's class, which month since the game's launch it covers (a number), and whether you opened it from the character's page or from Progress.</li>
+    <li><code>recap_completed</code>: that you reached the end of a monthly recap, the character's class and the month's number.</li>
   </ul>
   <p>It also sends four events about tips, described under <a href="#tips">Tips</a> below.</p>
   <p>Each event also carries technical details that the analytics library adds, such as the app version, the iOS version, the device model and the language setting. Events are tied to a random identifier the app creates on first launch. It is not linked to your identity, and deleting the app removes it.</p>
@@ -173,10 +182,10 @@
   <p>Usage events, feedback and diagnostic reports are not sold, and are not shared with anyone for advertising. They are used only to understand, fix and improve the app.</p>
 
   <h2>Retention</h2>
-  <p>Usage events and feedback are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour. Progress history and gear plans stay on your phone until you unpin the character, Blizzard no longer finds it, or you delete the app. The server's item list is rebuilt every day; items added from characters' gear are dropped after at most 30 days.</p>
+  <p>Usage events and feedback are kept for as long as the analytics plan retains them, at most one year, and then deleted. Diagnostic reports are kept for as long as Sentry's plan retains them, and then deleted. Cached character answers expire after about an hour. Progress history, game statistics, and gear and talent plans stay on your phone until you unpin the character, Blizzard no longer finds it, or you delete the app. The server's item list is rebuilt every day; items added from characters' gear are dropped after at most 30 days.</p>
 
   <h2>Your choices</h2>
-  <p>You can stop all collection by deleting the app, which also removes its progress history and gear plans. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app, and for feedback, roughly what you wrote.</p>
+  <p>You can stop all collection by deleting the app, which also removes its progress history, game statistics, and gear and talent plans. To ask about the data or request its deletion, email <span class="email">arnautresserras@gmail.com</span>. Because events and reports are anonymous, it helps to include roughly when you used the app, and for feedback, roughly what you wrote.</p>
 
   <h2>Children</h2>
   <p>The app is not directed at children and collects no personal data from anyone.</p>
